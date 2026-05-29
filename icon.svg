@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Definizioni di gradienti ed ombreggiature premium -->
+  <defs>
+    <!-- Sfondo spaziale profondo -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#070b13" />
+    </radialGradient>
+
+    <!-- Gradiente neon primario (Viola-Blu) -->
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Gradiente di contrasto (Smeraldo) -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Filtro di bagliore neon (Glow Effect) -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Maschera angoli arrotondati per installabilità (squircle maskable) -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+
+  <!-- Griglia del Radar sfumata in sottofondo -->
+  <g opacity="0.15">
+    <circle cx="256" cy="256" r="220" stroke="#3b82f6" stroke-width="2" fill="none" />
+    <circle cx="256" cy="256" r="160" stroke="#3b82f6" stroke-width="1.5" fill="none" />
+    <circle cx="256" cy="256" r="100" stroke="#3b82f6" stroke-width="1" fill="none" />
+    <line x1="256" y1="36" x2="256" y2="476" stroke="#3b82f6" stroke-width="1.5" />
+    <line x1="36" y1="256" x2="476" y2="256" stroke="#3b82f6" stroke-width="1.5" />
+  </g>
+
+  <!-- Linea sweeping del radar (il raggio di scansione attivo) -->
+  <path d="M256,256 L256,36 A220,220 0 0,1 411,100 Z" fill="url(#neonGrad)" opacity="0.08" />
+  <line x1="256" y1="256" x2="411" y2="100" stroke="#8b5cf6" stroke-width="3" filter="url(#neonGlow)" />
+
+  <!-- Cerchio esterno luminoso -->
+  <circle cx="256" cy="256" r="220" stroke="url(#neonGrad)" stroke-width="6" fill="none" filter="url(#neonGlow)" opacity="0.85" />
+
+  <!-- Punti "target" rilevati (sconti nel radar) -->
+  <circle cx="150" cy="180" r="10" fill="#10b981" filter="url(#neonGlow)" />
+  <circle cx="380" cy="300" r="8" fill="#ff9900" filter="url(#neonGlow)" opacity="0.7" />
+  <circle cx="320" cy="160" r="12" fill="#8b5cf6" filter="url(#neonGlow)" />
+
+  <!-- Icona Etereo/Euro e Radar al centro -->
+  <g transform="translate(186, 186) scale(1.1)" filter="url(#neonGlow)">
+    <!-- Cerchio di fondo per far risaltare il logo -->
+    <circle cx="64" cy="64" r="50" fill="#0c1220" stroke="url(#neonGrad)" stroke-width="3" />
+    
+    <!-- Icona Nodale (Radar/Connessione) -->
+    <path d="M44 48 C44 42.5 48.5 38 54 38 L74 38 C79.5 38 84 42.5 84 48 L84 72 C84 77.5 79.5 82 74 82 L54 82 C48.5 82 44 77.5 44 72 Z" fill="none" stroke="url(#emeraldGrad)" stroke-width="4" stroke-linejoin="round" />
+    
+    <!-- Simbolo Euro in stile tech minimalista -->
+    <text x="64" y="74" font-family="'Outfit', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">€</text>
+  </g>
+</svg>

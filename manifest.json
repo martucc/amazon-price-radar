@@ -1,0 +1,18 @@
+{
+  "name": "Amazon Price Radar",
+  "short_name": "PriceRadar",
+  "description": "Premium Price Tracker & AI Price Analytics for Amazon",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#070b13",
+  "theme_color": "#070b13",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
